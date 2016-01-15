@@ -1,0 +1,65 @@
+//
+//  PrefixHeaderA.pch
+//  PhotoSelectDemo
+//
+//  Created by AAA on 15/12/16.
+//  Copyright © 2015年 easywed. All rights reserved.
+//
+
+#ifndef PrefixHeaderA_pch
+#define PrefixHeaderA_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeaderA_pch */
+
+//获取设备的物理信息
+#define screenHeight    [UIScreen mainScreen].bounds.size.height
+#define screenWidth    [UIScreen mainScreen].bounds.size.width
+#define EWScaleFrame  screenWidth/320
+#define EWFont(size) [UIFont systemFontOfSize:size*EWScaleFont]
+//字体比例
+#define EWScaleFont  ([UIScreen mainScreen].bounds.size.width>320.0?1.1:1.0)
+
+#import "UILabel+La.h"
+#import "UIView+view.h"
+#import "CustomViewClass.h"
+#import "UIBarButtonItem+Create.h"
+#import "UIButton+Btn.h"
+#import "NSString+file.h"
+#import "UIImage+image.h"
+// 判断是否为iPhone6p
+#define iPhone6p ([UIScreen mainScreen].bounds.size.height == 736)
+// 判断是否为iPhone6
+#define iPhone6 ([UIScreen mainScreen].bounds.size.height == 667)
+// 判断是否为iPhone5
+#define iPhone5 ([UIScreen mainScreen].bounds.size.height == 568)
+// 判断是否为iPhone4
+#define iPhone4 ([UIScreen mainScreen].bounds.size.height == 480)
+
+//获取设备的物理信息
+
+#define MAScaleFrame             screenWidth/320                                                //屏幕比例
+#define MACellScaleFrame         ([UIScreen mainScreen].bounds.size.width>320.0?1.07:1.0)        //屏幕比例
+#define MAScaleFont              ([UIScreen mainScreen].bounds.size.width>320.0?1.1:1.0)        //字体比例
+
+#define screenHeight    [UIScreen mainScreen].bounds.size.height
+#define screenWidth    [UIScreen mainScreen].bounds.size.width
+#define MAColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+#define MAMGlobalBg EWColor(241, 241, 241)
+#define MAFont(size)  [UIFont systemFontOfSize:size*MAScaleFont]
+#define MARandomColor [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1]
+//获得手机的UUID
+#define IPHONEUUID  [CommonUtility originUUID]
+// .判断是否为iOS7
+#define iOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] = 7.0)
+// .判断是否为iOS8以上
+#define iOS8 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
+//当前语言
+#define  currentLanguage      [[[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"] objectAtIndex:0]
+//图片保存路径
+#define Image_PATH [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]stringByAppendingPathComponent:@"ImageFile"]
+
+#define CROP_IMAGE_PATH [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]stringByAppendingPathComponent:@"CropTagImage"]
