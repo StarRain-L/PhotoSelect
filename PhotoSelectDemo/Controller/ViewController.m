@@ -26,7 +26,7 @@
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == actionSheet.cancelButtonIndex) {
-        NSLog(@"取消");
+        NSLog(@"取消取消取消取消取消取消");
     }
     self.picker = [[UIImagePickerController alloc]init];
     self.picker.delegate = self;
